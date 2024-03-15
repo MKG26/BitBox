@@ -12,6 +12,8 @@
 		734907EA2BA4C8B600D97750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 734907E92BA4C8B600D97750 /* Assets.xcassets */; };
 		734907ED2BA4C8B600D97750 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 734907EC2BA4C8B600D97750 /* Preview Assets.xcassets */; };
 		734907F42BA4C8CA00D97750 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734907F32BA4C8C900D97750 /* ViewController.swift */; };
+		734907F62BA4D71000D97750 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734907F52BA4D71000D97750 /* Detector.swift */; };
+		734907F82BA4D79E00D97750 /* YOLOv3TinyInt8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 734907F72BA4D79E00D97750 /* YOLOv3TinyInt8LUT.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		734907E92BA4C8B600D97750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		734907EC2BA4C8B600D97750 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		734907F32BA4C8C900D97750 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		734907F52BA4D71000D97750 /* Detector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		734907F72BA4D79E00D97750 /* YOLOv3TinyInt8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3TinyInt8LUT.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			children = (
 				734907E52BA4C8B400D97750 /* ObjectDetectBitBoxApp.swift */,
 				734907E72BA4C8B400D97750 /* ContentView.swift */,
+				734907F52BA4D71000D97750 /* Detector.swift */,
 				734907F32BA4C8C900D97750 /* ViewController.swift */,
+				734907F72BA4D79E00D97750 /* YOLOv3TinyInt8LUT.mlmodel */,
 				734907E92BA4C8B600D97750 /* Assets.xcassets */,
 				734907EB2BA4C8B600D97750 /* Preview Content */,
 			);
@@ -141,8 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				734907F42BA4C8CA00D97750 /* ViewController.swift in Sources */,
+				734907F82BA4D79E00D97750 /* YOLOv3TinyInt8LUT.mlmodel in Sources */,
 				734907E82BA4C8B400D97750 /* ContentView.swift in Sources */,
 				734907E62BA4C8B400D97750 /* ObjectDetectBitBoxApp.swift in Sources */,
+				734907F62BA4D71000D97750 /* Detector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +287,7 @@
 				DEVELOPMENT_TEAM = 458RNVZ66L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App uses camera to detect objects";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +317,7 @@
 				DEVELOPMENT_TEAM = 458RNVZ66L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App uses camera to detect objects";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
