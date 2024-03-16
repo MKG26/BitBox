@@ -23,6 +23,24 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var requests = [VNRequest]()
     var detectionLayer: CALayer! = nil
     
+    private var audioPlayer: AVAudioPlayer?
+    
+     func playSound() {
+            guard let soundFileURL = Bundle.main.url(forResource: "Tada-sound", withExtension: ". mp3") else {
+                return
+            }
+
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: soundFileURL)
+                audioPlayer?.play()
+            } catch {
+                print("Error playing sound: \(error.localizedDescription)")
+            }
+        }
+    
+
+    
+    
       
     override func viewDidLoad() {
         checkPermission()

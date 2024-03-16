@@ -45,6 +45,26 @@ extension ViewController {
 
             detectionLayer.addSublayer(boxLayer)
         }
+        
+        func extractDetections(_ results: [VNObservation]) {
+            detectionLayer.sublayers = nil
+
+            for observation in results where observation is VNRecognizedObjectObservation {
+                guard let objectObservation = observation as? VNRecognizedObjectObservation else { continue }
+
+                // Transformations
+                let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(screenRect.size.width), Int(screenRect.size.height))
+                let transformedBounds = CGRect(x: objectBounds.minX, y: screenRect.size.height - objectBounds.maxY, width: objectBounds.maxX - objectBounds.minX, height: objectBounds.maxY - objectBounds.minY)
+
+                // Play sound if object is close enough
+                if transformedBounds.width > screenRect.width / 3 || transformedBounds.height > screenRect.height / 3 {
+                    playSound()
+                }
+
+                let boxLayer = drawBoundingBox(transformedBounds)
+                detectionLayer.addSublayer(boxLayer)
+            }
+        }
     }
     
     func setupLayers() {
